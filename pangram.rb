@@ -7,12 +7,7 @@
 # out "not pangram"
 
 def pangram (instr)
-    instr = instr.split().join().downcase.split("").uniq
-    if instr.length ==26
-        return true
-    else
-        return false
-    end
+    return (instr.split().join().downcase.split("").uniq.length ==26)    
 end
 
 a = gets.chomp  #read string
@@ -22,4 +17,3 @@ if pangram(a)
 else 
     puts "not pangram"
 end
-
