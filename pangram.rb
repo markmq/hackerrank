@@ -1,12 +1,25 @@
 # Check to see if input is a pangram
+# Pangram is a sentence that contains every letter of the alphabet.
+# Example: 
+# input "The quick brown fox jumped over the lazy dog"
+# out "pangram"
+# input "The brown fox jumped over the lazy dog"
+# out "not pangram"
+
+def pangram (instr)
+    instr = instr.split().join().downcase.split("").uniq
+    if instr.length ==26
+        return true
+    else
+        return false
+    end
+end
+
 a = gets.chomp  #read string
-a = a.split()   #parse into an array of strings
-a = a.join()    #join together array into one string again
-a = a.downcase  #remove any uppercase
-a = a.split("") #split string back into an array by characer "*"
-a = a.uniq      #remove any none unique element in the array eg. "0","0","1" to "0","1"
-if a.length == 26   #check the number of elements in our array
+
+if pangram(a)   
     puts "pangram"
 else 
     puts "not pangram"
 end
+
